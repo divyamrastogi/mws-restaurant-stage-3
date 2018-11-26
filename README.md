@@ -1,89 +1,32 @@
-# Mobile Web Specialist Certification Course (Nanodegree)
+# Mobile Web Specialist Certification Course
+---
+#### _Three Stage Course Material Project - Restaurant Reviews_
 
-## Motivation
+## Project Overview: Stage 1
 
-This project was built as a continuation of Mobile Web Specialist Nanodegree's Project stage 1 and 2 combined.
-This repository consists of end to end functionalities of all the project stages.
+For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
 
-The entire Nanodegree was carried out as a scholarship from **Google** and **Udacity** for the year 2018.
+### Specification
 
-## Project Stage 3 - Features
+You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
 
-### The entire project has been built using the following features:
+### What do I do from here?
 
-* The application uses **Responsive Web Design** with **Flexbox** mostly, **CSS Grid** sparingly and **Media Queries** heavily.
+1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
 
-* Responsive design is carried out keeping content in mind. Breakpoints are set according to content look as per screen starting from the smallest 300px device-width.
+In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
-* **Accessibility** techniques such as use of **semantic HTML**, **roles**, **ARIA** attributes, **managing focus** have been carried out throughout the application along with **skip links** for both the pages as well. Care was taken to make sure most of the interactive elements used were native HTML elements.
+2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
+3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
+4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
 
-* The 10 images in the first page are lazily loaded with the help of **Intersection Observer**.
+## Leaflet.js and Mapbox:
 
-* For performance optimization, the styles were loaded asynchronously with the help of **media** and **onload** attributes of link tag. This will prevent render blocking.
+This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
 
-* **Service Worker** has been used extensively to cache different types of files such as **HTML**, **CSS**, **JavaScript**, **json**, **mapbox files**, **images** and places them accordingly into static or dynamic caches.
+### Note about ES6
 
-* For getting data related to restaurants and reviews through separate calls, for performance, if the user is online the data for both are fetched as **network then cache** strategy otherwise, the fallback strategy **cache then network** is used. This technique helps to revalidate the cache with latest content in the client's offline storage.
+Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
-* **IndexedDB** is used with the help of Jake Archibald's **idb** library. Kudos to Jake!
 
-* Review Form submission and Favourite a restaurant features are built with custom **Background sync**. Even if user enters data while offline, The data is stored into IndexedDB while offline and then it goes to server. Online and Offline events were tracked carefully!
 
-* A generic Toast class was created from scratch alongwith css for informing users when they are online or offline. If user comes back online from offline state, the **background sync** for the specific tasks which user did are run and a toast message is shown in the app when the tasks finish syncing with the server.
-
-* The **Gulp** build tasks have been written from scratch with custom requirements kept in mind. Delete old build from dist folder, Minification, bundling, support for latest ES6 syntax including import and export, css browser compatibility, WebP image generation from JPG images, gzipping, serving cached files with max-age set to 1 year via **gulp serve**, all have been carried out to bring out the most optimal performance of the application. Use **gulp build** to build the app.
-
-## Setup & Run Guide
-
-This application uses **Gulp** as its default task runner. Run the following commands in order to launch the application.
-
-```
-npm install
-gulp build
-gulp serve
-```
-
-The application will be running at http://localhost:9000/ . For screenshots of some of the applciation features, refer the section below.
-
-## Lighthouse Audit Score
-
-### Audit was carried out in Chrome's incognito mode under localhost without HTTPS configuration.
-![Audit](screenshots/lighthouse-audit.png)
-
-## Screenshots
-
-The screenshots give a brief overview of the application features.
-
-### iPhone 5SE View (Restaurants)
-![iPhone 5SE View](screenshots/iPhone-view.png)
-
-### iPad View (Restaurants)
-![iPad View](screenshots/iPad-view.png)
-
-### Desktop View (Restaurants)
-![iPad View](screenshots/desktop-view.png)
-
-### iPhone 5SE View (Reviews)
-![iPhone 5SE View](screenshots/iPhone-view-2.png)
-
-### iPad View (Reviews)
-![iPad View](screenshots/iPad-view-2.png)
-
-### Desktop View (Reviews)
-![iPad View](screenshots/desktop-view-2.png)
-
-### Offline Restaurants & Favourite Feature With IndexedDB
-![Offline Favourite](screenshots/offline-favourite.png)
-
-### Offline Reviews With IndexedDB
-![Offline Reviews](screenshots/offline-reviews.png)
-
-### Background Sync Favourite Toast
-![Background Sync Favourite](screenshots/background-sync-favourite.png)
-
-### Background Sync Reviews Toast
-![Background Sync Reviews](screenshots/background-sync-reviews.png)
-
-### Gulp Build
-![Gulp Build](screenshots/gulp-build.png)
-# mws-restaurant-stage-3
